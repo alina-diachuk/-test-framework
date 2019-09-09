@@ -1,0 +1,38 @@
+plugins {
+    id 'java'
+    id "io.qameta.allure" version "2.7.0"
+
+}
+
+
+repositories {
+    mavenCentral()
+    jcenter()
+}
+
+
+allure {
+    version = '2.2.1'
+    autoconfigure = true
+    aspectjweaver = true
+    allureJavaVersion = '2.0-BETA9'
+}
+
+version '1.0-SNAPSHOT'
+
+sourceCompatibility = 1.8
+
+
+dependencies {
+    testImplementation group: 'junit', name: 'junit', version: '4.12'
+    testImplementation 'io.rest-assured:rest-assured:4.1.1'
+    testImplementation 'io.rest-assured:json-path:4.1.1'
+    testImplementation 'io.rest-assured:json-schema-validator:4.1.1'
+}
+
+test {
+    testLogging {
+        exceptionFormat = 'full'
+    }
+}
+
